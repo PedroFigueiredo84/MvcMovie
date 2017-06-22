@@ -7,8 +7,21 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+    @Html.ActionLink("Criar novo filme", "Create")
+
+
+    @using (Html.BeginForm())
+        {
+        <p>
+            
+            Titulo: @Html.TextBox("SearchString")
+            Genero: @Html.DropDownList("movieGenre", "All")
+            <input type="submit" value="Pesquisa" />
+
+        </p>
+        }
+        
+    </p>
 <table class="table">
     <tr>
         <th>
@@ -41,9 +54,9 @@
             @Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            @Html.ActionLink("Editar", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Detalhe", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Apagar", "Delete", new { id=item.ID })
         </td>
     </tr>
 }
